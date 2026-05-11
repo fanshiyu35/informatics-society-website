@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Members — European Research Network on Computational Social Science</title>
+<style>
+  :root {
+    --bg: #f4f5f7;
+    --card-bg: #ffffff;
+    --text: #2c2c2c;
+    --muted: #6b6b6b;
+    --full: #1a5276;
+    --associate: #1e8449;
+    --affiliate: #7d6608;
+    --border: #e0e0e0;
+    --accent: #34495e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  header h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.5px; }
+  header p  { font-size: 1.1rem; opacity: 0.85; margin-top: 0.5rem; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+  .summary-bar {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+  .summary-card {
+    flex: 1 1 180px;
+    max-width: 220px;
+    text-align: center;
+    padding: 1.2rem 1rem;
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .summary-card .count {
+    font-size: 2.4rem;
+    font-weight: 800;
+  }
+  .summary-card .label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .summary-card.full  .count { color: var(--full); }
+  .summary-card.assoc .count { color: var(--associate); }
+  .summary-card.affil .count { color: var(--affiliate); }
+
+  section { margin-bottom: 2.5rem; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--border);
+  }
+  .section-header .badge {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .badge-full  { background: #d4e6f1; color: var(--full); }
+  .badge-assoc { background: #d5f5e3; color: var(--associate); }
+  .badge-affil { background: #fcf3cf; color: var(--affiliate); }
+  .section-header h2 { font-size: 1.5rem; font-weight: 700; }
+
+  .member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+  .member-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 1.1rem 1.3rem;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    border-left: 4px solid transparent;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.09);
+  }
+  .member-card.full  { border-left-color: var(--full); }
+  .member-card.assoc { border-left-color: var(--associate); }
+  .member-card.affil { border-left-color: var(--affiliate); }
+
+  .member-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+  .member-affiliation {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+  .member-country {
+    font-size: 0.78rem;
+    color: #999;
+    margin-top: 0.15rem;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.7rem; }
+    .member-grid { grid-template-columns: 1fr; }
+    .summary-bar { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Member Directory</h1>
+  <p>European Research Network on Computational Social Science &amp; Policy Modelling</p>
+</header>
+
+<div class="container">
+
+  <!-- ── SUMMARY ── -->
+  <div class="summary-bar">
+    <div class="summary-card full">
+      <div class="count">12</div>
+      <div class="label">Full Members</div>
+    </div>
+    <div class="summary-card assoc">
+      <div class="count">10</div>
+      <div class="label">Associate Members</div>
+    </div>
+    <div class="summary-card affil">
+      <div class="count">10</div>
+      <div class="label">Affiliates</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FULL MEMBERS                                    -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section>
+    <div class="section-header">
+      <span class="badge badge-full">Full Member</span>
+      <h2>Full Members</h2>
+    </div>
+    <div class="member-grid">
+
+      <div class="member-card full">
+        <div class="member-name">Dr. Xiaoxiao Jiu</div>
+        <div class="member-affiliation">Foster School of Business, University of Washington</div>
+        <div class="member-country">Seattle, United States</div>
+      </div>
+
+      <div class="member-card full">
+        <div class="member-name">Prof. Andrzej Kowalski</div>
+        <div class="member-affiliation">Faculty of Economic Sciences, University of Warsaw</div>
+        <div class="member-country">Warsaw, Poland</div>
+      </div>
+
+      <div class="member-card full">
+        <div class="member-name">Dr. Katalin Németh</div>
+        <div class="member-affiliation">Institute of Sociology, Eotvos Lorand University (ELTE)</div>
+        <div class="member-country">Budapest, Hungary</div>
+      </div>
+
+      <div class="member-card full">
+        <div class="member-name">Prof. Miroslav Novak</div>
+        <div class="member-affiliation">Faculty of Social Studies, Masaryk University</div>
+        <div class="member-country">Brno, Czech Republic</div>
+      </div>
+
+      <div class="member-card full">
+        <div class="member-name">Dr. Elena Popescu</div>
+        <div class="member-affiliation">Department of Political Science, University of Bucharest</div>
+        <div class="member-country">Bucharest, Romania</div>
+      </div>
+
+      <div class="member-card full">
+        <div class="member-name">Prof. Dimitar Angelov</div>
+        <div class="member-affiliation">Faculty of Economics, Sofia University "St. Kliment Ohridski"</div>
+        <div class="member-country">Sofia, Bulgaria</div>
+      </div>
+
+      <div class="member-card full">
+        <div class="member-name">Dr. Zuzana Horváthová</div>
+        <div class="member-affiliation">Institute of Informatics, Slovak University of Technology</div>
+        <div class="member-country">Bratislava, Slovakia</div>
+      </div>
+
+      <div class="member-card full">
+        <div class="member-name">Prof. Vytautas Razauskas</div>
+        <div class="member-affiliation">Faculty of Mathematics and Informatics, Vilnius University</div>
+        <div class="member-country">Vilnius, Lithuania</div>
+      </div>
+
+      <div class="member-card full">
+        <div class="member-name">Dr. Ivana Marković</div>
+        <div class="member-affiliation">Faculty of Electrical Engineering and Computing, University of Zagreb</div>
+        <div class="member-country">Zagreb, Croatia</div>
+      </div>
+
+      <div class="member-card full">
+        <div class="member-name">Prof. Bogdan Stojanović</div>
+        <div class="member-affiliation">Faculty of Organizational Sciences, University of Belgrade</div>
+        <div class="member-country">Belgrade, Serbia</div>
+      </div>
+
+      <div class="member-card full">
+        <div class="member-name">Dr. Liis Tamm</div>
+        <div class="member-affiliation">School of Governance, Law and Society, Tallinn University</div>
+        <div class="member-country">Tallinn, Estonia</div>
+      </div>
+
+      <div class="member-card full">
+        <div class="member-name">Prof. Oksana Shevchenko</div>
+        <div class="member-affiliation">Faculty of Applied Sciences, Ukrainian Catholic University</div>
+        <div class="member-country">Lviv, Ukraine</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ASSOCIATE MEMBERS                               -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section>
+    <div class="section-header">
+      <span class="badge badge-assoc">Associate Member</span>
+      <h2>Associate Members</h2>
+    </div>
+    <div class="member-grid">
+
+      <div class="member-card assoc">
+        <div class="member-name">Dr. Petr Dvořák</div>
+        <div class="member-affiliation">Faculty of Information Technology, Czech Technical University in Prague</div>
+        <div class="member-country">Prague, Czech Republic</div>
+      </div>
+
+      <div class="member-card assoc">
+        <div class="member-name">Dr. Agnieszka Zielińska</div>
+        <div class="member-affiliation">Institute of Sociology, Jagiellonian University</div>
+        <div class="member-country">Krakow, Poland</div>
+      </div>
+
+      <div class="member-card assoc">
+        <div class="member-name">Dr. Laszlo Balogh</div>
+        <div class="member-affiliation">Department of Network and Data Science, Central European University</div>
+        <div class="member-country">Vienna, Austria</div>
+      </div>
+
+      <div class="member-card assoc">
+        <div class="member-name">Prof. Adriana Ionescu</div>
+        <div class="member-affiliation">Faculty of Sociology and Social Work, Babeș-Bolyai University</div>
+        <div class="member-country">Cluj-Napoca, Romania</div>
+      </div>
+
+      <div class="member-card assoc">
+        <div class="member-name">Dr. Jānis Bērziņš</div>
+        <div class="member-affiliation">Faculty of Computing, University of Latvia</div>
+        <div class="member-country">Riga, Latvia</div>
+      </div>
+
+      <div class="member-card assoc">
+        <div class="member-name">Dr. Milena Todorova</div>
+        <div class="member-affiliation">Institute of Mathematics and Informatics, Bulgarian Academy of Sciences</div>
+        <div class="member-country">Sofia, Bulgaria</div>
+      </div>
+
+      <div class="member-card assoc">
+        <div class="member-name">Prof. Matej Horvat</div>
+        <div class="member-affiliation">Faculty of Social Sciences, University of Ljubljana</div>
+        <div class="member-country">Ljubljana, Slovenia</div>
+      </div>
+
+      <div class="member-card assoc">
+        <div class="member-name">Dr. Kata Molnár</div>
+        <div class="member-affiliation">Institute of Economics, Centre for Economic and Regional Studies</div>
+        <div class="member-country">Budapest, Hungary</div>
+      </div>
+
+      <div class="member-card assoc">
+        <div class="member-name">Dr. Goran Petrović</div>
+        <div class="member-affiliation">Faculty of Economics, University of Montenegro</div>
+        <div class="member-country">Podgorica, Montenegro</div>
+      </div>
+
+      <div class="member-card assoc">
+        <div class="member-name">Prof. Renata Jankauskaitė</div>
+        <div class="member-affiliation">Institute of Data Science, Kaunas University of Technology</div>
+        <div class="member-country">Kaunas, Lithuania</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- AFFILIATES                                      -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section>
+    <div class="section-header">
+      <span class="badge badge-affil">Affiliate</span>
+      <h2>Affiliates</h2>
+    </div>
+    <div class="member-grid">
+
+      <div class="member-card affil">
+        <div class="member-name">Mgr. Tereza Svobodová</div>
+        <div class="member-affiliation">Faculty of Arts, Charles University</div>
+        <div class="member-country">Prague, Czech Republic</div>
+      </div>
+
+      <div class="member-card affil">
+        <div class="member-name">Mgr. Jakub Wójcik</div>
+        <div class="member-affiliation">Faculty of Mathematics, Informatics and Mechanics, University of Warsaw</div>
+        <div class="member-country">Warsaw, Poland</div>
+      </div>
+
+      <div class="member-card affil">
+        <div class="member-name">Mgr. Hanna Martyniuk</div>
+        <div class="member-affiliation">Department of Applied Mathematics, Lviv Polytechnic National University</div>
+        <div class="member-country">Lviv, Ukraine</div>
+      </div>
+
+      <div class="member-card affil">
+        <div class="member-name">Mgr. Dragana Ilić</div>
+        <div class="member-affiliation">Faculty of Philosophy, University of Novi Sad</div>
+        <div class="member-country">Novi Sad, Serbia</div>
+      </div>
+
+      <div class="member-card affil">
+        <div class="member-name">Mgr. István Farkas</div>
+        <div class="member-affiliation">Faculty of Informatics, University of Debrecen</div>
+        <div class="member-country">Debrecen, Hungary</div>
+      </div>
+
+      <div class="member-card affil">
+        <div class="member-name">Mgr. Ana Kovačević</div>
+        <div class="member-affiliation">Department of Sociology, University of Sarajevo</div>
+        <div class="member-country">Sarajevo, Bosnia and Herzegovina</div>
+      </div>
+
+      <div class="member-card affil">
+        <div class="member-name">Mgr. Martin Hruška</div>
+        <div class="member-affiliation">Faculty of Management, Comenius University</div>
+        <div class="member-country">Bratislava, Slovakia</div>
+      </div>
+
+      <div class="member-card affil">
+        <div class="member-name">Mgr. Vesna Dimitrovska</div>
+        <div class="member-affiliation">Faculty of Economics, Ss. Cyril and Methodius University</div>
+        <div class="member-country">Skopje, North Macedonia</div>
+      </div>
+
+      <div class="member-card affil">
+        <div class="member-name">Mgr. Darius Petraitis</div>
+        <div class="member-affiliation">Institute of International Relations and Political Science, Vilnius University</div>
+        <div class="member-country">Vilnius, Lithuania</div>
+      </div>
+
+      <div class="member-card affil">
+        <div class="member-name">Mgr. Kristel Pärn</div>
+        <div class="member-affiliation">Institute of Social Studies, University of Tartu</div>
+        <div class="member-country">Tartu, Estonia</div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  &copy; 2026 European Research Network on Computational Social Science &amp; Policy Modelling &mdash; All rights reserved.
+</footer>
+
+</body>
+</html>

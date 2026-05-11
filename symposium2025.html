@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informatics Society &mdash; 2025 Symposium Program</title>
+<style>
+  /* ===== RESET & BASE ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    line-height: 1.6;
+  }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    background: linear-gradient(135deg, #0a1628 0%, #0f2440 40%, #1a365d 100%);
+    color: #ffffff;
+    padding: 40px 20px 32px;
+    text-align: center;
+    border-bottom: 4px solid #c9a84c;
+  }
+  .site-header .org-name {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin-bottom: 8px;
+  }
+  .site-header h1 {
+    font-size: 2.4rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .site-header .subtitle {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #b0c4de;
+    margin-bottom: 10px;
+  }
+  .site-header .venue-line {
+    font-size: 0.95rem;
+    color: #d4dce8;
+  }
+  .site-header .venue-line strong { color: #ffffff; }
+
+  /* ===== NAV BAR ===== */
+  .nav-bar {
+    background: #ffffff;
+    border-bottom: 1px solid #dde;
+    padding: 10px 20px;
+    text-align: center;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .nav-bar a {
+    color: #1a365d;
+    text-decoration: none;
+    margin: 0 14px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+  .nav-bar a:hover { color: #c9a84c; }
+
+  /* ===== CONTAINER ===== */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 20px 40px;
+  }
+
+  /* ===== SECTION TITLES ===== */
+  .section-title {
+    font-size: 1.5rem;
+    color: #0a1628;
+    border-bottom: 3px solid #c9a84c;
+    padding-bottom: 6px;
+    margin: 36px 0 18px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== CARDS ===== */
+  .card {
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 22px 26px;
+    margin-bottom: 20px;
+    border-left: 4px solid #1a365d;
+  }
+  .card h3 {
+    color: #1a365d;
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+  .card .meta {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  .card .meta strong { color: #c9a84c; }
+
+  /* ===== KEYNOTE CARDS ===== */
+  .keynote-card {
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    border-left: 4px solid #c9a84c;
+  }
+  .keynote-card h3 {
+    color: #0a1628;
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+  }
+  .keynote-card .affiliation {
+    font-size: 0.9rem;
+    color: #1a365d;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  .keynote-card .bio {
+    font-size: 0.92rem;
+    color: #444;
+    line-height: 1.7;
+  }
+  .keynote-card .talk-title {
+    font-weight: bold;
+    color: #c9a84c;
+    margin-top: 8px;
+  }
+
+  /* ===== SCHEDULE TABLE ===== */
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    font-size: 0.9rem;
+  }
+  .schedule-table thead th {
+    background: #1a365d;
+    color: #ffffff;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+  }
+  .schedule-table tbody td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e8ecf1;
+    vertical-align: top;
+  }
+  .schedule-table tbody tr:hover { background: #f8f9fc; }
+  .schedule-table .time-col {
+    white-space: nowrap;
+    color: #1a365d;
+    font-weight: bold;
+    width: 100px;
+  }
+  .schedule-table .track-ai     { border-left: 3px solid #3b82f6; }
+  .schedule-table .track-is     { border-left: 3px solid #10b981; }
+  .schedule-table .track-cyber  { border-left: 3px solid #ef4444; }
+  .schedule-table .track-ds     { border-left: 3px solid #8b5cf6; }
+
+  /* ===== TRACK COLORED LABELS ===== */
+  .track-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    color: #fff;
+  }
+  .badge-ai    { background: #3b82f6; }
+  .badge-is    { background: #10b981; }
+  .badge-cyber { background: #ef4444; }
+  .badge-ds    { background: #8b5cf6; }
+
+  /* ===== PAPER LIST ===== */
+  .paper-item {
+    padding: 10px 0;
+    border-bottom: 1px dotted #e0e4ea;
+  }
+  .paper-item:last-child { border-bottom: none; }
+  .paper-item .paper-title {
+    font-weight: bold;
+    color: #1a1a2e;
+    font-size: 0.93rem;
+  }
+  .paper-item .paper-authors {
+    font-size: 0.82rem;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  /* ===== CHAIR / BREAK ROWS ===== */
+  .chair-row td {
+    background: #fef9e7;
+    color: #7a6200;
+    font-style: italic;
+    text-align: center;
+    font-size: 0.88rem;
+  }
+  .break-row td {
+    background: #e8f0fe;
+    color: #3a5a8c;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
+  /* ===== VENUE SECTION ===== */
+  .venue-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .venue-details .card { flex: 1 1 280px; }
+
+  /* ===== FOOTER ===== */
+  .site-footer {
+    background: #0a1628;
+    color: #8899aa;
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+    margin-top: 40px;
+  }
+  .site-footer strong { color: #c9a84c; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    .site-header h1 { font-size: 1.6rem; }
+    .schedule-table { font-size: 0.78rem; }
+    .venue-details { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="site-header">
+  <div class="org-name">Informatics Society of Central Europe</div>
+  <h1>2025 Annual Symposium</h1>
+  <div class="subtitle">&ldquo;Bridging Theory and Practice in the Digital Age&rdquo;</div>
+  <div class="venue-line">
+    <strong>October 15&ndash;17, 2025</strong> &ensp;&bull;&ensp;
+    Corvinus University of Budapest, Hungary
+  </div>
+</header>
+
+<!-- ========== STICKY NAV ========== -->
+<nav class="nav-bar">
+  <a href="#schedule">Schedule</a>
+  <a href="#keynotes">Keynotes</a>
+  <a href="#tracks">Tracks</a>
+  <a href="#chairs">Chairs</a>
+  <a href="#venue">Venue</a>
+  <a href="#org">Committee</a>
+</nav>
+
+<div class="container">
+
+<!-- ========== WELCOME ========== -->
+<div class="card">
+  <p style="font-size:0.95rem; color:#444;">
+    Welcome to the <strong>2025 Annual Symposium of the Informatics Society of Central Europe</strong>.
+    This three-day gathering brings together researchers, practitioners, and policymakers
+    from across the region to share cutting-edge work in artificial intelligence,
+    information systems, cybersecurity, and data science. We are honoured to host this
+    year&rsquo;s edition in Budapest, a city at the crossroads of European innovation and tradition.
+  </p>
+</div>
+
+<!-- ========== KEYNOTE SPEAKERS ========== -->
+<h2 class="section-title" id="keynotes">Keynote Speakers</h2>
+
+<div class="keynote-card">
+  <h3>Prof. Dr. M&aacute;ria Kov&aacute;cs</h3>
+  <div class="affiliation">E&ouml;tv&ouml;s Lor&aacute;nd University (ELTE), Budapest, Hungary</div>
+  <div class="talk-title">Keynote: &ldquo;Explainable AI in High-Stakes Decision Making: Lessons from European Healthcare&rdquo;</div>
+  <p class="bio">
+    M&aacute;ria Kov&aacute;cs is Professor of Computer Science at ELTE and director of the
+    Budapest AI Research Lab. She holds a PhD from the Technical University of Vienna
+    and has published over 150 papers on interpretable machine learning. She chaired
+    the European Commission&rsquo;s High-Level Expert Group on AI Transparency (2022&ndash;2024)
+    and is a recipient of the Humboldt Research Award. Her current work focuses on
+    post-hoc explanation methods for deep neural networks deployed in clinical settings.
+  </p>
+</div>
+
+<div class="keynote-card">
+  <h3>Prof. Dr. Piotr Zieli&nacute;ski</h3>
+  <div class="affiliation">Warsaw University of Technology, Poland</div>
+  <div class="talk-title">Keynote: &ldquo;Zero-Trust Architectures for Critical Infrastructure in Central Europe&rdquo;</div>
+  <p class="bio">
+    Piotr Zieli&nacute;ski is Head of the Cybersecurity Research Group at the Warsaw
+    University of Technology and a senior advisor to the Polish National Cyber Security
+    Centre. He earned his doctorate at the University of Cambridge and has led multiple
+    EU Horizon projects on resilient network design. His research spans intrusion
+    detection, software-defined perimeter security, and cyber threat intelligence
+    sharing frameworks across the Visegr&aacute;d Group countries.
+  </p>
+</div>
+
+<div class="keynote-card">
+  <h3>Dr. Elena Stoyanova</h3>
+  <div class="affiliation">Sofia University &ldquo;St. Kliment Ohridski&rdquo;, Bulgaria</div>
+  <div class="talk-title">Keynote: &ldquo;Federated Data Science: Privacy-Preserving Analytics at Scale&rdquo;</div>
+  <p class="bio">
+    Elena Stoyanova is Associate Professor of Statistics and Data Science at Sofia
+    University. Previously a research scientist at the Max Planck Institute for
+    Intelligent Systems, her work on federated learning and differential privacy has
+    been adopted by Eurostat for cross-border statistical disclosure control. She
+    serves on the editorial board of the <em>Journal of Privacy and Confidentiality</em>
+    and co-leads the Balkan Data Science Network.
+  </p>
+</div>
+
+<!-- ========== SCHEDULE ========== -->
+<h2 class="section-title" id="schedule">Programme Schedule &mdash; Day 1 (October 15)</h2>
+
+<table class="schedule-table">
+  <thead>
+    <tr>
+      <th style="width:100px;">Time</th>
+      <th>Session / Event</th>
+      <th style="width:180px;">Room</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="time-col">08:30&ndash;09:00</td>
+      <td><strong>Registration &amp; Welcome Coffee</strong></td>
+      <td>Main Lobby</td>
+    </tr>
+    <tr>
+      <td class="time-col">09:00&ndash;09:20</td>
+      <td><strong>Opening Ceremony</strong><br><span style="font-size:0.82rem;color:#666;">Dr. István Nagy, President, Informatics Society of Central Europe</span></td>
+      <td>Grand Hall</td>
+    </tr>
+    <tr>
+      <td class="time-col">09:20&ndash;10:20</td>
+      <td><strong>Keynote:</strong> Prof. Dr. Mária Kovács<br><span style="font-size:0.82rem;color:#666;">&ldquo;Explainable AI in High-Stakes Decision Making&rdquo;</span></td>
+      <td>Grand Hall</td>
+    </tr>
+    <tr class="break-row">
+      <td class="time-col">10:20&ndash;10:50</td>
+      <td colspan="2">Coffee Break &mdash; Sponsored by OTP Bank &ensp;☕</td>
+    </tr>
+    <tr>
+      <td class="time-col">10:50&ndash;12:30</td>
+      <td>
+        <strong>Parallel Paper Sessions I</strong><br>
+        <span class="track-badge badge-ai">Track A &mdash; AI</span> Room 201<br>
+        <span class="track-badge badge-is">Track B &mdash; IS</span> Room 202<br>
+        <span class="track-badge badge-cyber">Track C &mdash; Cyber</span> Room 203<br>
+        <span class="track-badge badge-ds">Track D &mdash; DS</span> Room 204
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="time-col">12:30&ndash;13:45</td>
+      <td colspan="2"><strong>Lunch Break</strong> &mdash; Danube View Restaurant (Floor 3)</td>
+    </tr>
+    <tr>
+      <td class="time-col">13:45&ndash;14:45</td>
+      <td><strong>Keynote:</strong> Prof. Dr. Piotr Zieliński<br><span style="font-size:0.82rem;color:#666;">&ldquo;Zero-Trust Architectures for Critical Infrastructure&rdquo;</span></td>
+      <td>Grand Hall</td>
+    </tr>
+    <tr class="break-row">
+      <td class="time-col">14:45&ndash;15:10</td>
+      <td colspan="2">Coffee Break &ensp;☕</td>
+    </tr>
+    <tr>
+      <td class="time-col">15:10&ndash;17:00</td>
+      <td><strong>Parallel Paper Sessions II</strong> &mdash; same room assignments</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="time-col">17:00&ndash;18:00</td>
+      <td><strong>Poster Session &amp; Demo Night</strong></td>
+      <td>Atrium</td>
+    </tr>
+    <tr class="break-row">
+      <td class="time-col">19:00</td>
+      <td colspan="2">Welcome Reception &mdash; Gundel Restaurant (by invitation)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="section-title">Programme Schedule &mdash; Day 2 (October 16)</h2>
+
+<table class="schedule-table">
+  <thead>
+    <tr><th style="width:100px;">Time</th><th>Session / Event</th><th style="width:180px;">Room</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="time-col">09:00&ndash;10:00</td>
+      <td><strong>Keynote:</strong> Dr. Elena Stoyanova<br><span style="font-size:0.82rem;color:#666;">&ldquo;Federated Data Science: Privacy-Preserving Analytics at Scale&rdquo;</span></td>
+      <td>Grand Hall</td>
+    </tr>
+    <tr class="break-row">
+      <td class="time-col">10:00&ndash;10:30</td>
+      <td colspan="2">Coffee Break &mdash; Sponsored by Magyar Telekom &ensp;☕</td>
+    </tr>
+    <tr>
+      <td class="time-col">10:30&ndash;12:10</td>
+      <td><strong>Parallel Paper Sessions III</strong> &mdash; same room assignments</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="time-col">12:10&ndash;13:30</td>
+      <td colspan="2"><strong>Lunch Break</strong> &mdash; Danube View Restaurant (Floor 3)</td>
+    </tr>
+    <tr>
+      <td class="time-col">13:30&ndash;15:10</td>
+      <td><strong>Parallel Paper Sessions IV</strong> &mdash; same room assignments</td>
+      <td></td>
+    </tr>
+    <tr class="break-row">
+      <td class="time-col">15:10&ndash;15:40</td>
+      <td colspan="2">Coffee Break &ensp;☕</td>
+    </tr>
+    <tr>
+      <td class="time-col">15:40&ndash;17:00</td>
+      <td><strong>Panel Discussion:</strong> &ldquo;Digital Sovereignty in Central Europe &mdash; Challenges and Opportunities&rdquo;<br>
+        <span style="font-size:0.82rem;color:#666;">Moderator: Dr. László Tamás (BME) &bull; Panellists: Kovács, Zieliński, Stoyanova, + Dr. Ana Marić (Zagreb)</span>
+      </td>
+      <td>Grand Hall</td>
+    </tr>
+    <tr class="break-row">
+      <td class="time-col">19:00</td>
+      <td colspan="2">Gala Dinner &mdash; Pesti Vigadó (Danube Embankment)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="section-title">Programme Schedule &mdash; Day 3 (October 17)</h2>
+
+<table class="schedule-table">
+  <thead>
+    <tr><th style="width:100px;">Time</th><th>Session / Event</th><th style="width:180px;">Room</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="time-col">09:00&ndash;10:30</td>
+      <td><strong>Parallel Paper Sessions V</strong> &mdash; same room assignments</td>
+      <td></td>
+    </tr>
+    <tr class="break-row">
+      <td class="time-col">10:30&ndash;11:00</td>
+      <td colspan="2">Farewell Coffee Break &ensp;☕</td>
+    </tr>
+    <tr>
+      <td class="time-col">11:00&ndash;12:00</td>
+      <td><strong>Best Paper Awards &amp; Closing Ceremony</strong></td>
+      <td>Grand Hall</td>
+    </tr>
+    <tr>
+      <td class="time-col">12:00&ndash;13:00</td>
+      <td><strong>Farewell Lunch</strong></td>
+      <td>Danube View Restaurant</td>
+    </tr>
+    <tr>
+      <td class="time-col">13:30&ndash;15:30</td>
+      <td><strong>Optional Walking Tour:</strong> Buda Castle &amp; Fisherman&rsquo;s Bastion (guided)</td>
+      <td>Meet at Main Lobby</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ========== TRACKS & PAPERS ========== -->
+<h2 class="section-title" id="tracks">Paper Presentations &mdash; by Track</h2>
+
+<!-- TRACK A: AI -->
+<div class="card">
+  <h3><span class="track-badge badge-ai">Track A</span> &nbsp;Artificial Intelligence &amp; Machine Learning</h3>
+  <div class="meta"><strong>Session Chair:</strong> Dr. &Aacute;gnes Farkas, Budapest University of Technology and Economics (BME)</div>
+
+  <div class="paper-item">
+    <div class="paper-title">A1. Transformer-Based Multilingual Named Entity Recognition for Agglutinative Languages</div>
+    <div class="paper-authors">G&aacute;bor N&eacute;meth, Tam&aacute;s Szab&oacute; &mdash; University of Szeged, Hungary</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">A2. Reinforcement Learning with Sparse Rewards for Autonomous Drone Navigation in Urban Canyons</div>
+    <div class="paper-authors">Krzysztof Malinowski, Aleksandra Nowak &mdash; AGH University of Krak&oacute;w, Poland</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">A3. Contrastive Pre-Training of Graph Neural Networks on Molecular Property Prediction Benchmarks</div>
+    <div class="paper-authors">Barbora Nov&aacute;kov&aacute;, Jakub Hrub&yacute; &mdash; Charles University, Prague, Czech Republic</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">A4. Efficient Fine-Tuning Strategies for Large Language Models on Low-Resource Slavic Languages</div>
+    <div class="paper-authors">Milan Petrovi&cacute;, Jelena Jovanovi&cacute; &mdash; University of Belgrade, Serbia</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">A5. Causal Discovery in High-Dimensional Observational Data: A Score-Based Hybrid Approach</div>
+    <div class="paper-authors">Andr&aacute;s Kiss, L&iacute;via Moln&aacute;r &mdash; Central European University (CEU), Vienna/Budapest</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">A6. Neural Architecture Search with Hardware-Aware Constraints for Edge Deployment</div>
+    <div class="paper-authors">Ond&rcaron;ej &Ccaron;ern&yacute;, Petra Dvoř&aacute;kov&aacute; &mdash; Brno University of Technology, Czech Republic</div>
+  </div>
+</div>
+
+<!-- TRACK B: IS -->
+<div class="card">
+  <h3><span class="track-badge badge-is">Track B</span> &nbsp;Information Systems &amp; Digital Transformation</h3>
+  <div class="meta"><strong>Session Chair:</strong> Dr. Zolt&aacute;n Horv&aacute;th, Corvinus University of Budapest, Hungary</div>
+
+  <div class="paper-item">
+    <div class="paper-title">B1. A Capability Maturity Model for Digital Government Services in the Visegr&aacute;d Region</div>
+    <div class="paper-authors">Marta Kowalska, Paweł Wiśniewski &mdash; University of Warsaw, Poland</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">B2. Blockchain-Enabled Traceability in Agri-Food Supply Chains: A Multi-Case Study from the Danube Basin</div>
+    <div class="paper-authors">J&aacute;nos T&oacute;th, Viktor Balogh &mdash; Sz&eacute;chenyi Istv&aacute;n University, Győr, Hungary</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">B3. ERP Modernization in Post-Soviet Manufacturing Enterprises: Barriers, Drivers, and Outcomes</div>
+    <div class="paper-authors">Oksana Shevchenko, Yuriy Bondarenko &mdash; Taras Shevchenko National University of Kyiv, Ukraine</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">B4. Measuring Digital Maturity in Public Administration: An Empirical Study of Municipalities in Croatia</div>
+    <div class="paper-authors">Ana Mari&cacute;, Marko Kovačevi&cacute; &mdash; University of Zagreb, Croatia</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">B5. Design Principles for Interoperable e-Health Platforms in Multi-Payer Healthcare Systems</div>
+    <div class="paper-authors">Emese Varga, &Aacute;d&aacute;m Simon &mdash; Semmelweis University, Budapest, Hungary</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">B6. Citizen-Centric Smart City Dashboards: A Design Science Research Approach</div>
+    <div class="paper-authors">Tom&aacute;&scaron; Hlav&aacute;č, Lenka Krajčovičov&aacute; &mdash; Comenius University, Bratislava, Slovakia</div>
+  </div>
+</div>
+
+<!-- TRACK C: CYBER -->
+<div class="card">
+  <h3><span class="track-badge badge-cyber">Track C</span> &nbsp;Cybersecurity &amp; Information Assurance</h3>
+  <div class="meta"><strong>Session Chair:</strong> Dr. B&aacute;lint Horv&aacute;th, &Oacute;buda University, Budapest, Hungary</div>
+
+  <div class="paper-item">
+    <div class="paper-title">C1. Ransomware Detection via Hardware Performance Counters: A Real-Time Machine Learning Approach</div>
+    <div class="paper-authors">Luk&aacute;&scaron; Bene&scaron;, Filip V&aacute;cha &mdash; Czech Technical University in Prague (ČVUT), Czech Republic</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">C2. Adversarial Robustness of Network Intrusion Detection Systems Against Gradient-Based Evasion Attacks</div>
+    <div class="paper-authors">D&aacute;niel Varga, P&eacute;ter N&eacute;meth &mdash; University of P&eacute;cs, Hungary</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">C3. Secure Multi-Party Computation for Privacy-Preserving Credit Scoring Across Balkan Banking Consortia</div>
+    <div class="paper-authors">Mihai Popescu, Andreea Ionescu &mdash; Politehnica University of Bucharest, Romania</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">C4. Post-Quantum Cryptographic Migration Strategies for e-Government PKI Infrastructures</div>
+    <div class="paper-authors">Katarzyna W&oacute;jcik, Tomasz Lewandowski &mdash; Poznań University of Technology, Poland</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">C5. Deepfake-Based Social Engineering: A Threat Analysis and Detection Framework for Central European Languages</div>
+    <div class="paper-authors">Viktorija Luka&scaron;evičiūtė, Jonas Kazlauskas &mdash; Vilnius University, Lithuania</div>
+  </div>
+</div>
+
+<!-- TRACK D: DS -->
+<div class="card">
+  <h3><span class="track-badge badge-ds">Track D</span> &nbsp;Data Science &amp; Analytics</h3>
+  <div class="meta"><strong>Session Chair:</strong> Dr. Katalin Moln&aacute;r, University of Debrecen, Hungary</div>
+
+  <div class="paper-item">
+    <div class="paper-title">D1. Spatio-Temporal Modelling of Air Quality in the Carpathian Basin Using Heterogeneous Sensor Networks</div>
+    <div class="paper-authors">P&eacute;ter Farkas, &Eacute;va Szűcs &mdash; University of Miskolc, Hungary</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">D2. Bayesian Hierarchical Models for Regional Inflation Forecasting in EU Member States</div>
+    <div class="paper-authors">Ivan Dimitrov, Maria Georgieva &mdash; University of National and World Economy, Sofia, Bulgaria</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">D3. Knowledge Graph Construction from Unstructured Medical Records in Hungarian and Polish Clinical Corpora</div>
+    <div class="paper-authors">Anna Lewandowska, G&aacute;bor Kiss &mdash; Jagiellonian University, Krak&oacute;w &amp; University of Szeged, Hungary</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">D4. Streaming Anomaly Detection for Industrial IoT Using Reservoir Computing on Edge Devices</div>
+    <div class="paper-authors">Andrej Kovač, Maja Zupančič &mdash; University of Ljubljana, Slovenia</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">D5. Fairness-Aware Recommendation Systems: Mitigating Popularity Bias in Central European E-Commerce Platforms</div>
+    <div class="paper-authors">Veronika Szab&oacute;, M&aacute;rk T&oacute;th &mdash; Corvinus University of Budapest, Hungary</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title">D6. Transfer Learning for Satellite Crop-Type Classification with Scarce Ground Truth Labels in the Pannonian Region</div>
+    <div class="paper-authors">M&aacute;ty&aacute;s Nagy, Hanna Bal&aacute;zs &mdash; E&ouml;tv&ouml;s Lor&aacute;nd University (ELTE), Budapest, Hungary</div>
+  </div>
+</div>
+
+<!-- ========== SESSION CHAIRS ========== -->
+<h2 class="section-title" id="chairs">Programme Committee &amp; Session Chairs</h2>
+
+<div class="card">
+  <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+    <tr style="border-bottom:1px solid #e0e4ea;">
+      <td style="padding:8px 0; font-weight:bold; color:#1a365d; width:40%;">General Chair</td>
+      <td style="padding:8px 0;">Dr. Istv&aacute;n Nagy, Informatics Society of Central Europe</td>
+    </tr>
+    <tr style="border-bottom:1px solid #e0e4ea;">
+      <td style="padding:8px 0; font-weight:bold; color:#1a365d;">Programme Co-Chairs</td>
+      <td style="padding:8px 0;">Dr. &Aacute;gnes Farkas (BME) &amp; Dr. Krzysztof Malinowski (AGH Krak&oacute;w)</td>
+    </tr>
+    <tr style="border-bottom:1px solid #e0e4ea;">
+      <td style="padding:8px 0; font-weight:bold; color:#1a365d;">Track A Chair &mdash; AI</td>
+      <td style="padding:8px 0;">Dr. &Aacute;gnes Farkas, Budapest University of Technology and Economics</td>
+    </tr>
+    <tr style="border-bottom:1px solid #e0e4ea;">
+      <td style="padding:8px 0; font-weight:bold; color:#1a365d;">Track B Chair &mdash; IS</td>
+      <td style="padding:8px 0;">Dr. Zolt&aacute;n Horv&aacute;th, Corvinus University of Budapest</td>
+    </tr>
+    <tr style="border-bottom:1px solid #e0e4ea;">
+      <td style="padding:8px 0; font-weight:bold; color:#1a365d;">Track C Chair &mdash; Cybersecurity</td>
+      <td style="padding:8px 0;">Dr. B&aacute;lint Horv&aacute;th, &Oacute;buda University, Budapest</td>
+    </tr>
+    <tr style="border-bottom:1px solid #e0e4ea;">
+      <td style="padding:8px 0; font-weight:bold; color:#1a365d;">Track D Chair &mdash; Data Science</td>
+      <td style="padding:8px 0;">Dr. Katalin Moln&aacute;r, University of Debrecen</td>
+    </tr>
+    <tr style="border-bottom:1px solid #e0e4ea;">
+      <td style="padding:8px 0; font-weight:bold; color:#1a365d;">Poster &amp; Demo Chair</td>
+      <td style="padding:8px 0;">Dr. Anna Lewandowska, Jagiellonian University, Krak&oacute;w</td>
+    </tr>
+    <tr style="border-bottom:1px solid #e0e4ea;">
+      <td style="padding:8px 0; font-weight:bold; color:#1a365d;">Local Arrangements</td>
+      <td style="padding:8px 0;">Dr. Emese Varga, Semmelweis University, Budapest</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 0; font-weight:bold; color:#1a365d;">Proceedings Editor</td>
+      <td style="padding:8px 0;">Dr. Barbora Nov&aacute;kov&aacute;, Charles University, Prague</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ========== VENUE ========== -->
+<h2 class="section-title" id="venue">Venue &amp; Practical Information</h2>
+
+<div class="venue-details">
+  <div class="card">
+    <h3>Conference Venue</h3>
+    <p style="margin-top:8px; font-size:0.92rem;">
+      <strong>Corvinus University of Budapest</strong><br>
+      Főv&aacute;m t&eacute;r 8, 1093 Budapest, Hungary<br><br>
+      The main campus is situated along the Danube river in central Budapest,
+      directly opposite the Great Market Hall (Nagy V&aacute;s&aacute;rcsarnok) and within
+      walking distance of the Liberty Bridge (Szabads&aacute;g h&iacute;d).
+    </p>
+  </div>
+  <div class="card">
+    <h3>Getting There</h3>
+    <p style="margin-top:8px; font-size:0.92rem;">
+      <strong>By Metro:</strong> M4 line to Főv&aacute;m t&eacute;r station (exit directly at the campus).<br>
+      <strong>By Tram:</strong> Lines 2, 47, 48, 49 to Főv&aacute;m t&eacute;r.<br>
+      <strong>From Airport (BUD):</strong> Bus 100E to De&aacute;k Ferenc t&eacute;r, then M3/M2/M4 metro (~45 minutes).<br>
+      <strong>Taxi:</strong> Főtaxi official airport partner; ~9,500 HUF (~25 EUR).
+    </p>
+  </div>
+  <div class="card">
+    <h3>Accommodation</h3>
+    <p style="margin-top:8px; font-size:0.92rem;">
+      Blocks of rooms have been reserved at:<br>
+      &bull; <strong>Danubius Hotel Gell&eacute;rt</strong> (5 min walk)<br>
+      &bull; <strong>Mercure Budapest City Center</strong> (10 min walk)<br>
+      &bull; <strong>Ibis Budapest Centrum</strong> (15 min walk)<br>
+      Mention booking code <em>ISCESymposium2025</em> for the discounted rate.
+    </p>
+  </div>
+</div>
+
+<!-- ========== ORGANIZING INSTITUTIONS ========== -->
+<h2 class="section-title" id="org">Participating Institutions</h2>
+<div class="card">
+  <div style="display:flex; flex-wrap:wrap; gap:20px; font-size:0.88rem; color:#444;">
+    <div style="flex:1 1 240px;">
+      🇭🇺 Eötvös Loránd University (ELTE), Budapest<br>
+      🇭🇺 Budapest University of Technology &amp; Economics (BME)<br>
+      🇭🇺 Corvinus University of Budapest<br>
+      🇭🇺 University of Szeged<br>
+      🇭🇺 University of Debrecen<br>
+      🇭🇺 Óbuda University<br>
+      🇭🇺 Semmelweis University<br>
+    </div>
+    <div style="flex:1 1 240px;">
+      🇵🇱 University of Warsaw<br>
+      🇵🇱 AGH University of Kraków<br>
+      🇵🇱 Jagiellonian University<br>
+      🇵🇱 Poznań University of Technology<br>
+      🇨🇿 Charles University, Prague<br>
+      🇨🇿 Brno University of Technology<br>
+      🇸🇰 Comenius University, Bratislava<br>
+    </div>
+    <div style="flex:1 1 240px;">
+      🇷🇴 Politehnica University of Bucharest<br>
+      🇧🇬 Sofia University<br>
+      🇷🇸 University of Belgrade<br>
+      🇭🇷 University of Zagreb<br>
+      🇸🇮 University of Ljubljana<br>
+      🇱🇹 Vilnius University<br>
+      🇺🇦 Taras Shevchenko University, Kyiv<br>
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<footer class="site-footer">
+  <strong>Informatics Society of Central Europe</strong> &mdash; 2025 Annual Symposium<br>
+  Corvinus University of Budapest, Fővám tér 8, 1093 Budapest, Hungary<br>
+  Contact: <span style="color:#c9a84c;">symposium2025@isce-hub.eu</span> &ensp;|&ensp;
+  Phone: +36 1 482 5000 &ensp;|&ensp;
+  @ISCESymposium2025
+</footer>
+
+</body>
+</html>
